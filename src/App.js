@@ -1,5 +1,5 @@
 import React from "react";
-import axios from "axios";
+
 import ReactAnimatedWeather from "react-animated-weather";
 
 import "./App.css";
