@@ -2,7 +2,6 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import "./App.css";
 import Search from "./Search";
-import City from "./City";
 import Temperature from "./Temperature";
 import Conditions from "./Conditions";
 import ForecastLinks from "./ForecastLinks";

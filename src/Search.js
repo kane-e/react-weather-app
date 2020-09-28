@@ -33,6 +33,8 @@ export default function Search() {
           <i className="fas fa-globe"></i>
         </button>
       </form>
+
+      <h1 id="city">Tokyo, JP</h1>
     </div>
   );
 }
