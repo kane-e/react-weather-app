@@ -1,11 +1,41 @@
+.Conditions {
+  text-align: center;
+}
+.Conditions .current-temp {
+  text-align: center;
+  margin-right: 0;
+}
+
+.Conditions #current-temp {
+  font-size: 43px;
+}
+
+.Conditions .current-unit {
+  font-size: 18px;
+  position: relative;
+  bottom: 18px;
+}
+
+.Conditions .active {
+  color: #2d2b2b;
+  cursor: default;
+  pointer-events: none;
+}
+.Conditions .not-active {
+  color: #f3c623;
+  text-shadow: -0.5px 0.5px 0 #000, 0.5px 0.5px 0 #000, 0.5px -0.5px 0 #000,
+    -0.5px -0.5px 0 #000;
+}
+.Conditions .active:hover {
+  color: #2d2b2b;
+  text-decoration: none;
+}
+
 .Conditions #icon {
   width: 110px;
   margin-bottom: 15px;
   position: relative;
   bottom: 20px;
-}
-.Conditions {
-  text-align: center;
 }
 
 .Conditions .current-condition {

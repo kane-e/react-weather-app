@@ -2,7 +2,7 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import "./App.css";
 import Search from "./Search";
-import Temperature from "./Temperature";
+
 import Conditions from "./Conditions";
 import ForecastLinks from "./ForecastLinks";
 import HourlyForecast from "./HourlyForecast";
@@ -19,8 +19,7 @@ export default function App() {
           <hr />
           <div className="error-wrapper">
             <Search />
-            <City name="Tokyo, JP" />
-            <Temperature value={66} />
+
             <Conditions
               description="Cloudy"
               low={60}

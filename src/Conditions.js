@@ -5,6 +5,20 @@ import "./Conditions.css";
 export default function Conditions(props) {
   return (
     <div className="Conditions">
+      <div className="row current-temp">
+        <div className="col-8 text-right">
+          <span id="current-temp">66</span>
+          <span className="current-unit">
+            <a href="/" id="fahrenheit-link" className="active">
+              °F
+            </a>
+            |
+            <a href="/" id="celsius-link" className="not-active">
+              °C
+            </a>
+          </span>
+        </div>
+      </div>
       <h4 className="text-center current-condition mb-2">
         {props.description}
       </h4>
