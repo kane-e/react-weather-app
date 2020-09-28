@@ -1,0 +1,16 @@
+.DailyForecast .forecast {
+  font-size: 17px;
+  margin: 0 30px;
+  position: relative;
+  bottom: 100px;
+  border: 1px solid transparent;
+  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+}
+
+.DailyForecast .forecast img {
+  width: 52px;
+}
+.DailyForecast .hide {
+  display: none;
+}

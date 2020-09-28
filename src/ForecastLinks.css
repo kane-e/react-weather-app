@@ -1,0 +1,20 @@
+.ForecastLinks .forecast-links {
+  position: relative;
+  bottom: 110px;
+  left: 30px;
+}
+
+.ForecastLinks .active {
+  color: #2d2b2b;
+  cursor: default;
+  pointer-events: none;
+}
+.ForecastLinks .not-active {
+  color: #f3c623;
+  text-shadow: -0.5px 0.5px 0 #000, 0.5px 0.5px 0 #000, 0.5px -0.5px 0 #000,
+    -0.5px -0.5px 0 #000;
+}
+.ForecastLinks .active:hover {
+  color: #2d2b2b;
+  text-decoration: none;
+}

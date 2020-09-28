@@ -1,0 +1,15 @@
+.HourlyForecast .hourly {
+  font-size: 17px;
+  margin: 0 30px;
+  position: relative;
+  bottom: 100px;
+  border: 1px solid transparent;
+  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+}
+.HourlyForecast .hourly img {
+  width: 55px;
+}
+.HourlyForecast .hide {
+  display: none;
+}

@@ -1,0 +1,48 @@
+.Conditions #icon {
+  width: 110px;
+  margin-bottom: 15px;
+  position: relative;
+  bottom: 20px;
+}
+.Conditions {
+  text-align: center;
+}
+
+.Conditions .current-condition {
+  font-size: 22px;
+  margin: 0 auto;
+  color: #f3c623;
+}
+.Conditions .low {
+  position: relative;
+  left: 30px;
+}
+.Conditions .high {
+  position: relative;
+  right: 30px;
+}
+
+.Conditions .wind {
+  position: relative;
+  left: 60px;
+}
+.Conditions .humidity {
+  position: relative;
+  right: 60px;
+}
+.Conditions .high,
+.low {
+  bottom: 120px;
+}
+.Conditions .humidity,
+.wind {
+  bottom: 110px;
+}
+.Conditions .conditions {
+  font-size: 20px;
+  line-height: 3;
+  text-align: center;
+}
+.Conditions .conditions .fas {
+  color: #810000;
+}

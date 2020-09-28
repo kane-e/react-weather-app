@@ -1,18 +1,41 @@
 import React from "react";
 
-import ReactAnimatedWeather from "react-animated-weather";
-
 import "./App.css";
+import Search from "./Search";
+import City from "./City";
+import Temperature from "./Temperature";
+import Conditions from "./Conditions";
+import ForecastLinks from "./ForecastLinks";
+import HourlyForecast from "./HourlyForecast";
+import DailyForecast from "./DailyForecast";
+import Header from "./Header";
+import Footer from "./Footer";
 
-function App() {
+export default function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <h1>Hello World</h1>
-        <ReactAnimatedWeather icon="CLEAR_DAY" />
-      </header>
+      <div className="app-wrapper">
+        <div className="weather-app">
+          <Header />
+          <hr />
+          <div className="error-wrapper">
+            <Search />
+            <City name="Tokyo, JP" />
+            <Temperature value={66} />
+            <Conditions
+              description="Cloudy"
+              low={60}
+              high={75}
+              wind={10}
+              humidity={4}
+            />
+            <ForecastLinks />
+            <HourlyForecast />
+            <DailyForecast />
+          </div>
+        </div>
+        <Footer />
+      </div>
     </div>
   );
 }
-
-export default App;
