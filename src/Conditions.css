@@ -1,6 +1,13 @@
 .Conditions {
   text-align: center;
 }
+.Conditions #city {
+  text-align: center;
+  color: #f3c623;
+  font-size: 30px;
+  text-shadow: -0.5px 0.5px 0 #000, 0.5px 0.5px 0 #000, 0.5px -0.5px 0 #000,
+    -0.5px -0.5px 0 #000;
+}
 .Conditions .current-temp {
   text-align: center;
   margin-right: 0;

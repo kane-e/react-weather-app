@@ -42,10 +42,3 @@
 .Search .tooltip .arrow::before {
   border-top-color: rgba(0, 0, 0, 0.8);
 }
-.Search #city {
-  text-align: center;
-  color: #f3c623;
-  font-size: 30px;
-  text-shadow: -0.5px 0.5px 0 #000, 0.5px 0.5px 0 #000, 0.5px -0.5px 0 #000,
-    -0.5px -0.5px 0 #000;
-}
