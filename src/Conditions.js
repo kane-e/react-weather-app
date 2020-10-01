@@ -1,25 +1,13 @@
 import React from "react";
 import "./Conditions.css";
 import CurrentIcon from "./CurrentIcon";
+import Temperature from "./Temperature";
 
 export default function Conditions(props) {
   return (
     <div className="Conditions">
       <h1 id="city">{props.data.city}</h1>
-      <div className="row current-temp">
-        <div className="col-8 text-right">
-          <span id="current-temp">{Math.round(props.data.temperature)}</span>
-          <span className="current-unit">
-            <a href="/" id="fahrenheit-link" className="active">
-              °F
-            </a>
-            |
-            <a href="/" id="celsius-link" className="not-active">
-              °C
-            </a>
-          </span>
-        </div>
-      </div>
+      <Temperature fahrenheit={props.data.temperature} />
       <h4 className="text-center current-condition mb-2">
         {props.data.description}
       </h4>

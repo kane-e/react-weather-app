@@ -1,0 +1,33 @@
+.Temperature {
+  text-align: center;
+}
+
+.Temperature .current-temp {
+  text-align: center;
+  margin-right: 0;
+}
+
+.Temperature #current-temp {
+  font-size: 43px;
+}
+
+.Temperature .current-unit {
+  font-size: 18px;
+  position: relative;
+  bottom: 18px;
+}
+
+.Temperature .active {
+  color: #2d2b2b;
+  cursor: default;
+  pointer-events: none;
+}
+.Temperature .not-active {
+  color: #f3c623;
+  text-shadow: -0.5px 0.5px 0 #000, 0.5px 0.5px 0 #000, 0.5px -0.5px 0 #000,
+    -0.5px -0.5px 0 #000;
+}
+.Temperature .active:hover {
+  color: #2d2b2b;
+  text-decoration: none;
+}
