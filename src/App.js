@@ -5,7 +5,7 @@ import Search from "./Search";
 import ForecastLinks from "./ForecastLinks";
 import HourlyForecast from "./HourlyForecast";
 import DailyForecast from "./DailyForecast";
-import Header from "./Header";
+
 import Footer from "./Footer";
 
 export default function App() {
@@ -13,8 +13,6 @@ export default function App() {
     <div className="App">
       <div className="app-wrapper">
         <div className="weather-app">
-          <Header />
-          <hr />
           <Search defaultCity="New York" />
           <ForecastLinks />
           <HourlyForecast />

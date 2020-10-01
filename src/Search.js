@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./Search.css";
 import Conditions from "./Conditions";
+import DateTime from "./DateTime";
 import axios from "axios";
 
 export default function Search(props) {
@@ -14,7 +15,7 @@ export default function Search(props) {
       city: response.data.name,
       temperature: response.data.main.temp,
       humidity: response.data.main.humidity,
-      date: 9 / 28 / 20,
+      date: new Date(response.data.dt * 1000),
       description: response.data.weather[0].main,
       icon: response.data.weather[0].icon,
       wind: response.data.wind.speed,
@@ -34,6 +35,8 @@ export default function Search(props) {
   if (weather.ready) {
     return (
       <div className="Search">
+        <DateTime date={weather.date} />
+        <hr />
         <form className="search-form" onSubmit={handleSubmit}>
           <input
             type="text"
