@@ -7,7 +7,7 @@ export default function Conditions(props) {
       <h1 id="city">{props.data.city}</h1>
       <div className="row current-temp">
         <div className="col-8 text-right">
-          <span id="current-temp">{props.data.temperature}</span>
+          <span id="current-temp">{Math.round(props.data.temperature)}</span>
           <span className="current-unit">
             <a href="/" id="fahrenheit-link" className="active">
               °F

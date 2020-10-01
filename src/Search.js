@@ -21,14 +21,17 @@ export default function Search(props) {
       wind: response.data.wind.speed,
     });
   }
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    searchCity();
+  }
   function updateCity(event) {
     setCity(event.target.value);
   }
-  function handleSubmit(event) {
-    event.preventDefault();
-    let units = "imperial";
-    let apiKey = "0d7e16e444bab64875c9066cabbd2b5bd94";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
+  function searchCity() {
+    let apiKey = "e6aad960aca331045ba67af72c2a113c";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
     axios.get(apiUrl).then(showWeather);
   }
 
@@ -71,10 +74,7 @@ export default function Search(props) {
       </div>
     );
   } else {
-    let units = "imperial";
-    let apiKey = "e16e444bab64875c9066cabbd2b5bd94";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
-    axios.get(apiUrl).then(showWeather);
+    searchCity();
     return "Loading";
   }
 }
