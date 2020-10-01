@@ -1,5 +1,6 @@
 import React from "react";
 import "./Conditions.css";
+import CurrentIcon from "./CurrentIcon";
 
 export default function Conditions(props) {
   return (
@@ -24,7 +25,7 @@ export default function Conditions(props) {
       </h4>
       <div className="row">
         <div className="col text-center">
-          <img id="icon" src={props.data.icon} alt="" />
+          <CurrentIcon data={props.data.icon} />
         </div>
       </div>
       <div className="row conditions ">

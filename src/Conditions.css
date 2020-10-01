@@ -38,13 +38,6 @@
   text-decoration: none;
 }
 
-.Conditions #icon {
-  width: 110px;
-  margin-bottom: 15px;
-  position: relative;
-  bottom: 20px;
-}
-
 .Conditions .current-condition {
   font-size: 22px;
   margin: 0 auto;
