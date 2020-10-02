@@ -13,6 +13,7 @@ export default function Search(props) {
     setWeather({
       ready: true,
       city: response.data.name,
+      country: response.data.sys.country,
       temperature: response.data.main.temp,
       humidity: response.data.main.humidity,
       date: new Date(response.data.dt * 1000),

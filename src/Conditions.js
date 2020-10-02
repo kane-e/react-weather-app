@@ -6,7 +6,9 @@ import Temperature from "./Temperature";
 export default function Conditions(props) {
   return (
     <div className="Conditions">
-      <h1 id="city">{props.data.city}</h1>
+      <h1 id="city">
+        {props.data.city}, {props.data.country}
+      </h1>
       <Temperature fahrenheit={props.data.temperature} />
       <h4 className="text-center current-condition mb-2">
         {props.data.description}
