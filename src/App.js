@@ -4,7 +4,6 @@ import "./App.css";
 import Search from "./Search";
 import ForecastLinks from "./ForecastLinks";
 import HourlyForecast from "./HourlyForecast";
-import DailyForecast from "./DailyForecast";
 
 import Footer from "./Footer";
 
@@ -16,7 +15,6 @@ export default function App() {
           <Search defaultCity="New York" />
           <ForecastLinks />
           <HourlyForecast />
-          <DailyForecast />
         </div>
         <Footer />
       </div>

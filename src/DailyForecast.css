@@ -1,16 +1,20 @@
-.DailyForecast .forecast {
+.DailyForecast {
+  text-align: center;
   font-size: 17px;
-  margin: 0 30px;
   position: relative;
-  bottom: 100px;
+  bottom: 65px;
   border: 1px solid transparent;
   box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
   border-radius: 5px;
+  margin: auto 20px;
+  padding: 10px;
+}
+.DailyForecast canvas {
+  margin: 5px auto;
+  display: block;
+  width: 50px;
 }
 
-.DailyForecast .forecast img {
-  width: 52px;
-}
 .DailyForecast .hide {
   display: none;
 }

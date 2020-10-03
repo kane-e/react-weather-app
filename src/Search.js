@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./Search.css";
 import Conditions from "./Conditions";
 import DateTime from "./DateTime";
+import DailyForecast from "./DailyForecast";
 import axios from "axios";
 
 export default function Search(props) {
@@ -20,6 +21,8 @@ export default function Search(props) {
       description: response.data.weather[0].main,
       icon: response.data.weather[0].icon,
       wind: response.data.wind.speed,
+      lat: response.data.coord.lat,
+      lon: response.data.coord.lon,
     });
   }
 
@@ -31,7 +34,7 @@ export default function Search(props) {
     setCity(event.target.value);
   }
   function searchCity() {
-    let apiKey = "e6aad960aca331045ba67af72c2a113c";
+    let apiKey = "35e83019a6881c6f862e82a156e4c5fc";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
     axios.get(apiUrl).then(showWeather);
   }
@@ -72,6 +75,7 @@ export default function Search(props) {
           </button>
         </form>
         <Conditions data={weather} />
+        <DailyForecast data={weather} />
       </div>
     );
   } else {

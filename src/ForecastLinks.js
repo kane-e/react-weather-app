@@ -10,6 +10,7 @@ export default function ForecastLinks() {
         </a>{" "}
         |
         <a href="/" id="hourly-link" className="not-active">
+          {" "}
           Hourly
         </a>
       </span>

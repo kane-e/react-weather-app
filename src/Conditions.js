@@ -1,6 +1,6 @@
 import React from "react";
 import "./Conditions.css";
-import CurrentIcon from "./CurrentIcon";
+import Icon from "./Icon";
 import Temperature from "./Temperature";
 
 export default function Conditions(props) {
@@ -15,7 +15,7 @@ export default function Conditions(props) {
       </h4>
       <div className="row">
         <div className="col text-center">
-          <CurrentIcon data={props.data.icon} />
+          <Icon data={props.data.icon} />
         </div>
       </div>
       <div className="row conditions ">

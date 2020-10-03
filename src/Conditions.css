@@ -8,6 +8,9 @@
   text-shadow: -0.5px 0.5px 0 #000, 0.5px 0.5px 0 #000, 0.5px -0.5px 0 #000,
     -0.5px -0.5px 0 #000;
 }
+.Conditions canvas {
+  width: 75px;
+}
 
 .Conditions .current-condition {
   font-size: 22px;

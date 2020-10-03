@@ -1,8 +1,8 @@
 import React from "react";
-import "./CurrentIcon.css";
+import "./Icon.css";
 import ReactAnimatedWeather from "react-animated-weather";
 
-export default function CurrentIcon(props) {
+export default function Icon(props) {
   const mapIcons = {
     "01d": "CLEAR_DAY",
     "01n": "CLEAR_NIGHT",
@@ -25,7 +25,7 @@ export default function CurrentIcon(props) {
   };
 
   return (
-    <div className="CurrentIcon">
+    <div className="Icon" id="CurrentIcon">
       <ReactAnimatedWeather
         icon={mapIcons[props.data]}
         color="Black"
