@@ -2,6 +2,7 @@ import React from "react";
 import "./Conditions.css";
 import Icon from "./Icon";
 import Temperature from "./Temperature";
+import Wind from "./Wind";
 
 export default function Conditions(props) {
   return (
@@ -33,11 +34,7 @@ export default function Conditions(props) {
         </div>
       </div>
       <div className="row conditions">
-        <div className="col-6 wind">
-          <i className="fas fa-wind"></i>
-          <span id="wind"> {Math.round(props.data.wind)}</span>
-          <span id="wind-unit"> mph</span>
-        </div>
+        <Wind speed={props.data.wind} unit={props.unit} />
         <div className="col-6 humidity">
           <i className="fas fa-tint"></i>
           <span id="humidity"> {Math.round(props.data.humidity)}</span>%

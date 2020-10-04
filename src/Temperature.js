@@ -47,7 +47,7 @@ export default function Temperature(props) {
                 className="not-active"
                 onClick={getFahrenheit}
               >
-                °F
+                °F{" "}
               </a>
               |
               <a href="/" id="celsius-link" className="active">
