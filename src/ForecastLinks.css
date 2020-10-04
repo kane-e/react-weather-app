@@ -5,7 +5,7 @@
 }
 
 .ForecastLinks .active {
-  color: #2d2b2b;
+  color: black;
   cursor: default;
   pointer-events: none;
 }

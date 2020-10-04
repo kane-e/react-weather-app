@@ -28,7 +28,7 @@ export default function Icon(props) {
     <div className="Icon" id="CurrentIcon">
       <ReactAnimatedWeather
         icon={mapIcons[props.data]}
-        color="Black"
+        color="#ffcbcb"
         size={64}
         animate={true}
       />

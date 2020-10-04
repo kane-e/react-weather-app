@@ -96,6 +96,6 @@ export default function Search(props) {
     );
   } else {
     searchCity();
-    return "Loading";
+    return "CODED BY EMMA";
   }
 }
