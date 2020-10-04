@@ -16,11 +16,11 @@ export default function DailyForecast(props) {
   if (loaded) {
     return (
       <div className="DailyForecast row">
-        <ForecastWeather data={forecast.daily[1]} />
-        <ForecastWeather data={forecast.daily[2]} />
-        <ForecastWeather data={forecast.daily[3]} />
-        <ForecastWeather data={forecast.daily[4]} />
-        <ForecastWeather data={forecast.daily[5]} />
+        <ForecastWeather data={forecast.daily[1]} unit={props.unit} />
+        <ForecastWeather data={forecast.daily[2]} unit={props.unit} />
+        <ForecastWeather data={forecast.daily[3]} unit={props.unit} />
+        <ForecastWeather data={forecast.daily[4]} unit={props.unit} />
+        <ForecastWeather data={forecast.daily[5]} unit={props.unit} />
       </div>
     );
   } else {

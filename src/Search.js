@@ -8,6 +8,7 @@ import axios from "axios";
 export default function Search(props) {
   const [city, setCity] = useState(props.defaultCity);
   const [weather, setWeather] = useState({ ready: false });
+  const [unit, setUnit] = useState("fahrenheit");
 
   function showWeather(response) {
     console.log(response.data);
@@ -74,8 +75,8 @@ export default function Search(props) {
             <i className="fas fa-globe"></i>
           </button>
         </form>
-        <Conditions data={weather} />
-        <DailyForecast data={weather} />
+        <Conditions data={weather} unit={unit} setUnit={setUnit} />
+        <DailyForecast data={weather} unit={unit} />
       </div>
     );
   } else {

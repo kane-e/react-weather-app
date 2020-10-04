@@ -36,11 +36,11 @@
 }
 .Conditions .high,
 .low {
-  bottom: 120px;
+  bottom: 100px;
 }
 .Conditions .humidity,
 .wind {
-  bottom: 110px;
+  bottom: 90px;
 }
 .Conditions .conditions {
   font-size: 20px;

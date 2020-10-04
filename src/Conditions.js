@@ -9,7 +9,11 @@ export default function Conditions(props) {
       <h1 id="city">
         {props.data.city}, {props.data.country}
       </h1>
-      <Temperature fahrenheit={props.data.temperature} />
+      <Temperature
+        fahrenheit={props.data.temperature}
+        unit={props.unit}
+        setUnit={props.setUnit}
+      />
       <h4 className="text-center current-condition mb-2">
         {props.data.description}
       </h4>

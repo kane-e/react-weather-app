@@ -8,20 +8,50 @@ export default function ForecastWeather(props) {
     let day = days[dt.getDay()];
     return `${day}`;
   }
-  return (
-    <div className=" ForecastWeather col col-xs-1">
-      <div>{forecastDay()}</div>
-      <div>
-        <span className="forecast-high">{Math.round(props.data.temp.max)}</span>
-        °
-      </div>
-      <div>
-        <Icon id="ForecastIcon" data={props.data.weather[0].icon} />
-      </div>
 
-      <div>
-        <span className="forecast-low">{Math.round(props.data.temp.min)}</span>°
+  if (props.unit === "fahrenheit") {
+    return (
+      <div className=" ForecastWeather col col-xs-1">
+        <div>{forecastDay()}</div>
+        <div>
+          <span className="forecast-high">
+            {Math.round(props.data.temp.max)}
+          </span>
+          °
+        </div>
+        <div>
+          <Icon id="ForecastIcon" data={props.data.weather[0].icon} />
+        </div>
+
+        <div>
+          <span className="forecast-low">
+            {Math.round(props.data.temp.min)}
+          </span>
+          °
+        </div>
       </div>
-    </div>
-  );
+    );
+  } else {
+    return (
+      <div className=" ForecastWeather col col-xs-1">
+        <div>{forecastDay()}</div>
+        <div>
+          <span className="forecast-high">
+            {Math.round(((props.data.temp.max - 32) * 5) / 9)}
+          </span>
+          °
+        </div>
+        <div>
+          <Icon id="ForecastIcon" data={props.data.weather[0].icon} />
+        </div>
+
+        <div>
+          <span className="forecast-low">
+            {Math.round(((props.data.temp.min - 32) * 5) / 9)}
+          </span>
+          °
+        </div>
+      </div>
+    );
+  }
 }

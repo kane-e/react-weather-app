@@ -1,21 +1,19 @@
-import React, { useState } from "react";
+import React from "react";
 import "./Temperature.css";
 
 export default function Temperature(props) {
-  const [unit, setUnit] = useState("fahrenheit");
-
   function getFahrenheit(event) {
     event.preventDefault();
-    setUnit("fahrenheit");
+    props.setUnit("fahrenheit");
   }
   function getCelsius(event) {
     event.preventDefault();
-    setUnit("celsius");
+    props.setUnit("celsius");
   }
   function celsiusTemperature(event) {
     return props.fahrenheit - (32 * 5) / 9;
   }
-  if (unit === "fahrenheit") {
+  if (props.unit === "fahrenheit") {
     return (
       <div className="Temperature">
         <div className="row current-temp">
