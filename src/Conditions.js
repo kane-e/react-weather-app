@@ -26,11 +26,11 @@ export default function Conditions(props) {
       <div className="row conditions ">
         <div className="col-6 low">
           <i className="fas fa-thermometer-empty"></i>
-          <span id="current-low"> 00</span>°
+          <span id="current-low"> {Math.round(props.dailyLow)}</span>°
         </div>
         <div className="col-6 high">
           <i className="fas fa-thermometer-three-quarters"></i>
-          <span id="current-high"> 99</span>°
+          <span id="current-high"> {Math.round(props.dailyHigh)}</span>°
         </div>
       </div>
       <div className="row conditions">

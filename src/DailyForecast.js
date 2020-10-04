@@ -8,8 +8,10 @@ export default function DailyForecast(props) {
   const [forecast, setForecast] = useState(null);
 
   function getForecast(response) {
-    console.log(response);
+    console.log(response.data);
     setForecast(response.data);
+    props.setDailyHigh(response.data.daily[0].temp.max);
+    props.setDailyLow(response.data.daily[0].temp.min);
     setLoaded(true);
   }
 

@@ -9,6 +9,8 @@ export default function Search(props) {
   const [city, setCity] = useState(props.defaultCity);
   const [weather, setWeather] = useState({ ready: false });
   const [unit, setUnit] = useState("fahrenheit");
+  const [dailyHigh, setDailyHigh] = useState(null);
+  const [dailyLow, setDailyLow] = useState(null);
 
   function showWeather(response) {
     console.log(response.data);
@@ -75,8 +77,21 @@ export default function Search(props) {
             <i className="fas fa-globe"></i>
           </button>
         </form>
-        <Conditions data={weather} unit={unit} setUnit={setUnit} />
-        <DailyForecast data={weather} unit={unit} />
+        <Conditions
+          data={weather}
+          unit={unit}
+          setUnit={setUnit}
+          dailyHigh={dailyHigh}
+          dailyLow={dailyLow}
+        />
+        <DailyForecast
+          data={weather}
+          unit={unit}
+          dailyHigh={dailyHigh}
+          setDailyHigh={setDailyHigh}
+          dailyLow={dailyLow}
+          setDailyLow={setDailyLow}
+        />
       </div>
     );
   } else {
