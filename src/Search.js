@@ -41,6 +41,38 @@ export default function Search(props) {
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
     axios.get(apiUrl).then(showWeather);
   }
+  function getPosition(event) {
+    navigator.geolocation.getCurrentPosition(searchPosition);
+  }
+  function searchPosition(position) {
+    let lat = position.coords.latitude;
+    let lon = position.coords.longitude;
+    let apiKey = "35e83019a6881c6f862e82a156e4c5fc";
+    let units = "imperial";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=${units}&appid=${apiKey}`;
+    axios.get(apiUrl).then(showWeather);
+  }
+  function searchRandom(event) {
+    let cities = [
+      "London",
+      "New York",
+      "Sao Paulo",
+      "Moscow",
+      "Lima",
+      "Madrid",
+      "Seoul",
+      "Jakarta",
+      "Cairo",
+    ];
+
+    let randomCity = Math.floor(Math.random() * 10);
+    let city = (randomCity, cities[randomCity]);
+
+    let apiKey = "35e83019a6881c6f862e82a156e4c5fc";
+    let units = "imperial";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
+    axios.get(apiUrl).then(showWeather);
+  }
 
   if (weather.ready) {
     return (
@@ -65,6 +97,7 @@ export default function Search(props) {
             data-toggle="tooltip"
             data-placement="top"
             title="My Location"
+            onClick={getPosition}
           >
             <i className="fas fa-map-marker-alt"></i>
           </button>
@@ -73,6 +106,7 @@ export default function Search(props) {
             data-toggle="tooltip"
             data-placement="top"
             title="Random City"
+            onClick={searchRandom}
           >
             <i className="fas fa-globe"></i>
           </button>

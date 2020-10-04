@@ -3,6 +3,7 @@ import "./Conditions.css";
 import Icon from "./Icon";
 import Temperature from "./Temperature";
 import Wind from "./Wind";
+import MaxMin from "./MaxMin";
 
 export default function Conditions(props) {
   return (

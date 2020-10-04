@@ -17,14 +17,6 @@
   margin: 0 auto;
   color: #f3c623;
 }
-.Conditions .low {
-  position: relative;
-  left: 30px;
-}
-.Conditions .high {
-  position: relative;
-  right: 30px;
-}
 
 .Conditions .wind {
   position: relative;
@@ -34,10 +26,19 @@
   position: relative;
   right: 60px;
 }
+.Conditions .low {
+  position: relative;
+  left: 30px;
+}
+.Conditions .high {
+  position: relative;
+  right: 30px;
+}
 .Conditions .high,
 .low {
   bottom: 100px;
 }
+
 .Conditions .humidity,
 .wind {
   bottom: 90px;

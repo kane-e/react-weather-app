@@ -1,5 +1,8 @@
 import React from "react";
+import "./MaxMin.css";
 
 export default function MaxMin(props) {
-  return <div className="MaxMin"></div>;
+  if (props.unit === "fahrenheit") {
+    return <span> </span>;
+  }
 }
