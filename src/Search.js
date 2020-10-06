@@ -94,20 +94,12 @@ export default function Search(props) {
           <button
             id="location-button"
             className="location-button"
-            data-toggle="tooltip"
-            data-placement="top"
-            title="My Location"
             onClick={getPosition}
           >
             <i className="fas fa-map-marker-alt"></i>
           </button>
-          <button
-            id="random-button"
-            data-toggle="tooltip"
-            data-placement="top"
-            title="Random City"
-            onClick={searchRandom}
-          >
+
+          <button id="random-button" onClick={searchRandom}>
             <i className="fas fa-globe"></i>
           </button>
         </form>
