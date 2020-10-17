@@ -14,7 +14,7 @@ export default function DailyForecast(props) {
     setLoaded(true);
   }
 
-  if (loaded) {
+  if (loaded && forecast.lat === props.data.lat && forecast.lon === props.data.lon) {
     return (
       <div className="DailyForecast row">
         <ForecastWeather data={forecast.daily[1]} unit={props.unit} />
