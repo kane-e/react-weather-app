@@ -14,7 +14,7 @@
 }
 
 .Temperature .active {
-  color: #2d2b2b;
+  color: black;
   cursor: default;
 }
 .Temperature .not-active {
@@ -23,6 +23,6 @@
     -0.5px -0.5px 0 #000;
 }
 .Temperature .active:hover {
-  color: #2d2b2b;
+  color: black;
   text-decoration: none;
 }
