@@ -5,10 +5,12 @@ import DateTime from "./DateTime";
 import DailyForecast from "./DailyForecast";
 import axios from "axios";
 
+
 export default function Search(props) {
   const [city, setCity] = useState(props.defaultCity);
   const [weather, setWeather] = useState({ ready: false });
   const [unit, setUnit] = useState("fahrenheit");
+  const [preview, setPreview] = useState("daily");
   const [dailyHigh, setDailyHigh] = useState(null);
   const [dailyLow, setDailyLow] = useState(null);
 
@@ -117,7 +119,10 @@ export default function Search(props) {
           setDailyHigh={setDailyHigh}
           dailyLow={dailyLow}
           setDailyLow={setDailyLow}
+          preview = {preview}
+          setPreview= {setPreview}
         />
+        
       </div>
     );
   } else {
