@@ -37,6 +37,7 @@ export default function DateTime(props) {
   ];
   let month = months[props.date.getMonth()];
   let number = props.date.getDate();
+  
 
   return (
     <div className="DateTime">

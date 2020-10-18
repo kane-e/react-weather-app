@@ -2,7 +2,7 @@
   text-align: center;
   font-size: 17px;
   position: relative;
-  bottom: 65px;
+  bottom: 60px;
   border: 1px solid transparent;
   box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
   border-radius: 5px;
@@ -15,6 +15,19 @@
   width: 50px;
 }
 
-.DailyForecast .hide {
-  display: none;
+.DailyForecast .forecast-links {
+  position: absolute;
+  left: 0;
+  bottom: 150px;
+}
+
+.DailyForecast .forecast-links .active {
+  color: black;
+  cursor: default;
+}
+.DailyForecast .forecast-links .not-active {
+  color: #f3c623;
+}
+.DailyForecast .forecast-links .active:hover {
+  text-decoration: none;
 }
