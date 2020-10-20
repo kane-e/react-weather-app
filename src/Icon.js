@@ -1,5 +1,4 @@
 import React from "react";
-import "./Icon.css";
 import ReactAnimatedWeather from "react-animated-weather";
 
 export default function Icon(props) {
