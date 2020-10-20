@@ -3,6 +3,8 @@ import "./Conditions.css";
 import Icon from "./Icon";
 import Temperature from "./Temperature";
 import Wind from "./Wind";
+import MaxMin from "./MaxMin";
+
 
 export default function Conditions(props) {
   return (
@@ -23,16 +25,7 @@ export default function Conditions(props) {
           <Icon data={props.data.icon} />
         </div>
       </div>
-      <div className="row conditions ">
-        <div className="col-6 low">
-          <i className="fas fa-thermometer-empty"></i>
-          <span id="current-low"> {Math.round(props.dailyLow)}</span>°
-        </div>
-        <div className="col-6 high">
-          <i className="fas fa-thermometer-three-quarters"></i>
-          <span id="current-high"> {Math.round(props.dailyHigh)}</span>°
-        </div>
-      </div>
+      <MaxMin dailyLow={props.dailyLow} dailyHigh={props.dailyHigh } unit={props.unit}/>
       <div className="row conditions">
         <Wind speed={props.data.wind} unit={props.unit} />
         <div className="col-6 humidity">
