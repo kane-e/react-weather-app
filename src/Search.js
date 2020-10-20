@@ -4,6 +4,10 @@ import Conditions from "./Conditions";
 import DateTime from "./DateTime";
 import DailyForecast from "./DailyForecast";
 import axios from "axios";
+import Location from "./Location";
+import Random from "./Random";
+
+
 
 
 export default function Search(props) {
@@ -13,6 +17,7 @@ export default function Search(props) {
   const [preview, setPreview] = useState("daily");
   const [dailyHigh, setDailyHigh] = useState(null);
   const [dailyLow, setDailyLow] = useState(null);
+  const [alert, setAlert] = useState(false)
 
   function showWeather(response) {
     console.log(response.data);
@@ -75,6 +80,12 @@ export default function Search(props) {
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
     axios.get(apiUrl).then(showWeather);
   }
+  function showTooltip(event){
+    setAlert(true);
+  }
+  function hideTooltip(event){
+    setAlert(false);
+  }
 
   if (weather.ready) {
     return (
@@ -92,18 +103,22 @@ export default function Search(props) {
             onChange={updateCity}
           />
           <input type="submit" value="Search" id="submit" />
-
+          
           <button
             id="location-button"
             className="location-button"
-            onClick={getPosition}
+            onClick={getPosition} onMouseEnter = {showTooltip} onMouseLeave= {hideTooltip}
           >
+            { alert ? <Location /> : null }
             <i className="fas fa-map-marker-alt"></i>
           </button>
-
-          <button id="random-button" onClick={searchRandom}>
+         
+          
+          <button id="random-button" onClick={searchRandom} onMouseEnter={showTooltip} onMouseLeave= {hideTooltip} >
+            { alert ? <Random /> : null}
             <i className="fas fa-globe"></i>
           </button>
+          
         </form>
         <Conditions
           data={weather}

@@ -1,0 +1,11 @@
+.Random {
+  font-size: 10px;
+  border: 1px solid black;
+  position: absolute;
+  top: 62px;
+  right: 480px;
+  color: whitesmoke;
+  background-color: black;
+  padding: 2px;
+  border-radius: 5px;
+}
