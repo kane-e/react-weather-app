@@ -12,7 +12,7 @@
 .DailyForecast canvas {
   margin: 5px auto;
   display: block;
-  width: 50px;
+  width: 45px;
 }
 
 .DailyForecast .forecast-links {
@@ -26,7 +26,7 @@
   cursor: default;
 }
 .DailyForecast .forecast-links .not-active {
-  color: #f3c623;
+  color: goldenrod;
 }
 .DailyForecast .forecast-links .active:hover {
   text-decoration: none;
