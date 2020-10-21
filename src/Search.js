@@ -17,7 +17,8 @@ export default function Search(props) {
   const [preview, setPreview] = useState("daily");
   const [dailyHigh, setDailyHigh] = useState(null);
   const [dailyLow, setDailyLow] = useState(null);
-  const [alert, setAlert] = useState(false)
+  const [alert, setAlert] = useState(false);
+  const [message, setMessage] = useState(false);
 
   function showWeather(response) {
     console.log(response.data);
@@ -86,6 +87,12 @@ export default function Search(props) {
   function hideTooltip(event){
     setAlert(false);
   }
+  function showMessage(event){
+    setMessage(true);
+  }
+  function hideMessage(event){
+    setMessage(false);
+  }
 
   if (weather.ready) {
     return (
@@ -114,8 +121,8 @@ export default function Search(props) {
           </button>
          
           
-          <button id="random-button" onClick={searchRandom} onMouseEnter={showTooltip} onMouseLeave= {hideTooltip} >
-            { alert ? <Random /> : null}
+          <button id="random-button" onClick={searchRandom} onMouseEnter={showMessage} onMouseLeave= {hideMessage} >
+            { message ? <Random /> : null}
             <i className="fas fa-globe"></i>
           </button>
           

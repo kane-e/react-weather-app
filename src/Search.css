@@ -3,6 +3,9 @@
   margin: 15px auto 20px;
   font-size: 15px;
 }
+.Search {
+  position: relative;
+}
 .Search #search-input {
   background-color: rgba(0, 0, 0, 0.5);
   color: white;
