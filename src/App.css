@@ -23,22 +23,6 @@ hr {
   margin: 0;
 }
 
-/* error page */
-#error {
-  color: #900d0d;
-  text-shadow: none;
-  text-align: center;
-  margin-top: 35px;
-  margin-left: 55px;
-  font-size: 25px;
-  width: 80%;
-}
-#reload {
-  background-color: transparent;
-  font-size: 100px;
-  border: none;
-}
-
 @media screen and (max-width: 480px) and (orientation: portrait) {
   .weather-app {
     width: 100%;

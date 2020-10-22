@@ -1,0 +1,14 @@
+.ErrorMessage {
+  color: #900d0d;
+  text-shadow: none;
+  text-align: center;
+  margin-top: 35px;
+  margin-left: 55px;
+  font-size: 25px;
+  width: 80%;
+}
+.ErrorMessage #reload {
+  background-color: transparent;
+  font-size: 100px;
+  border: none;
+}

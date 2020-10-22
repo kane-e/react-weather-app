@@ -6,6 +6,7 @@ import Forecast from "./Forecast";
 import axios from "axios";
 import Location from "./Location";
 import Random from "./Random";
+import ErrorMessage from "./ErrorMessage";
 
 
 
@@ -19,6 +20,7 @@ export default function Search(props) {
   const [dailyLow, setDailyLow] = useState(null);
   const [alert, setAlert] = useState(false);
   const [message, setMessage] = useState(false);
+  const [error, setError] = useState(false);
 
   function showWeather(response) {
     console.log(response.data);
@@ -39,7 +41,15 @@ export default function Search(props) {
 
   function handleSubmit(event) {
     event.preventDefault();
-    searchCity();
+    try{
+      if(error.response.status === 404){
+        throw new Error("Search Again");
+      }
+      searchCity();
+    }catch{
+      setError(true);
+    }
+    
   }
   function updateCity(event) {
     setCity(event.target.value);
@@ -94,7 +104,7 @@ export default function Search(props) {
     setMessage(false);
   }
 
-  if (weather.ready) {
+  if (weather.ready && error === false) {
     return (
       <div className="Search">
         <DateTime date={weather.date} />
@@ -147,7 +157,11 @@ export default function Search(props) {
         
       </div>
     );
-  } else {
+  }  
+  if (weather.ready && error === true){
+      return <ErrorMessage />
+    } 
+  else {
     searchCity();
     return "CODED BY EMMA";
   }
