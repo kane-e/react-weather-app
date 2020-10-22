@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./Search.css";
 import Conditions from "./Conditions";
 import DateTime from "./DateTime";
-import DailyForecast from "./DailyForecast";
+import Forecast from "./Forecast";
 import axios from "axios";
 import Location from "./Location";
 import Random from "./Random";
@@ -134,7 +134,7 @@ export default function Search(props) {
           dailyHigh={dailyHigh}
           dailyLow={dailyLow}
         />
-        <DailyForecast
+        <Forecast
           data={weather}
           unit={unit}
           dailyHigh={dailyHigh}

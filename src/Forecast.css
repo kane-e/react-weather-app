@@ -1,4 +1,4 @@
-.DailyForecast {
+.Forecast {
   text-align: center;
   font-size: 17px;
   position: relative;
@@ -9,25 +9,25 @@
   margin: auto 20px;
   padding: 10px;
 }
-.DailyForecast canvas {
+.Forecast canvas {
   margin: 5px auto;
   display: block;
   width: 45px;
 }
 
-.DailyForecast .forecast-links {
+.Forecast .forecast-links {
   position: absolute;
   left: 0;
   bottom: 150px;
 }
 
-.DailyForecast .forecast-links .active {
+.Forecast .forecast-links .active {
   color: black;
   cursor: default;
 }
-.DailyForecast .forecast-links .not-active {
+.Forecast .forecast-links .not-active {
   color: goldenrod;
 }
-.DailyForecast .forecast-links .active:hover {
+.Forecast .forecast-links .active:hover {
   text-decoration: none;
 }

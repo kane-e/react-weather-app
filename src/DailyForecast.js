@@ -1,88 +1,57 @@
-import React, { useState } from "react";
-import "./DailyForecast.css";
-import axios from "axios";
-import ForecastWeather from "./ForecastWeather";
-import HourlyForecast from "./HourlyForecast";
-
+import React from "react";
+import Icon from "./Icon";
 
 export default function DailyForecast(props) {
-  const [loaded, setLoaded] = useState(false);
-  const [forecast, setForecast] = useState(null);
-  
-
-  function getForecast(response) {
-    setForecast(response.data);
-    console.log(response.data);
-    
-    props.setDailyHigh(response.data.daily[0].temp.max);
-    props.setDailyLow(response.data.daily[0].temp.min);
-    setLoaded(true);
-  }
-  function getHourly(event){
-    event.preventDefault();
-    return props.setPreview("hourly")
-  }
-  function getDaily(event){
-    event.preventDefault();
-    return props.setPreview("daily");
+  function forecastDay() {
+    let dt = new Date(props.data.dt * 1000);
+    let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+    let day = days[dt.getDay()];
+    return `${day}`;
   }
 
-  if (loaded && forecast.lat === props.data.lat && forecast.lon === props.data.lon && props.preview === "daily" ) {
+  if (props.unit === "fahrenheit") {
     return (
-      <div className= "DailyForecast">
-      <span className="forecast-links">
-        <a href="/" id="daily-link" className="active">
-          Daily
-        </a>{" "}
-        |
-        <a href="/" id="hourly-link" className="not-active" onClick={getHourly}>
-          {" "}
-          Hourly
-        </a>
-      </span>
-      <div className=" row">
-        <ForecastWeather data={forecast.daily[1]} unit={props.unit} />
-        <ForecastWeather data={forecast.daily[2]} unit={props.unit} />
-        <ForecastWeather data={forecast.daily[3]} unit={props.unit} />
-        <ForecastWeather data={forecast.daily[4]} unit={props.unit} />
-        <ForecastWeather data={forecast.daily[5]} unit={props.unit} />
-        
-      </div>
+      <div className=" DailyForecast col col-xs-1">
+        <div>{forecastDay()}</div>
+        <div>
+          <span className="forecast-high">
+            {Math.round(props.data.temp.max)}
+          </span>
+          °
+        </div>
+        <div>
+          <Icon id="ForecastIcon" data={props.data.weather[0].icon} />
+        </div>
+
+        <div>
+          <span className="forecast-low">
+            {Math.round(props.data.temp.min)}
+          </span>
+          °
+        </div>
       </div>
     );
   } else {
-    if (loaded && forecast.lat === props.data.lat && forecast.lon === props.data.lon && props.preview === "hourly" ) {
     return (
-      <div className= "DailyForecast">
-      <span className="forecast-links">
-        <a href="/" id="daily-link" className="not-active" onClick={getDaily}>
-          Daily
-        </a>{" "}
-        |
-        <a href="/" id="hourly-link" className="active">
-          {" "}
-          Hourly
-        </a>
-      </span>
-      <div className=" row">
-        <HourlyForecast data={forecast.hourly[1]} unit={props.unit} />
-        <HourlyForecast data={forecast.hourly[2]} unit={props.unit} />
-        <HourlyForecast data={forecast.hourly[3]} unit={props.unit} />
-        <HourlyForecast data={forecast.hourly[4]} unit={props.unit} />
-        <HourlyForecast data={forecast.hourly[5]} unit={props.unit} />
-        
-      </div>
+      <div className=" DailyForecast col col-xs-1">
+        <div>{forecastDay()}</div>
+        <div>
+          <span className="forecast-high">
+            {Math.round(((props.data.temp.max - 32) * 5) / 9)}
+          </span>
+          °
+        </div>
+        <div>
+          <Icon id="ForecastIcon" data={props.data.weather[0].icon} />
+        </div>
+
+        <div>
+          <span className="forecast-low">
+            {Math.round(((props.data.temp.min - 32) * 5) / 9)}
+          </span>
+          °
+        </div>
       </div>
     );
-  } else {
-    let apiKey = "35e83019a6881c6f862e82a156e4c5fc";
-    let lat = props.data.lat;
-    let lon = props.data.lon;
-    let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&
-    exclude=minutely&appid=${apiKey}&units=imperial`;
-    axios.get(apiUrl).then(getForecast);
-
-    return "Loading";
-  }
   }
 }
