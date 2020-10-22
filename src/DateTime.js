@@ -1,7 +1,18 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import "./DateTime.css";
 
 export default function DateTime(props) {
+  const [greeting, setGreeting] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setGreeting(false);
+    }, 3000);
+    return () => clearTimeout(timer);
+  }, []);
+
+
+
   function formatHours() {
     let hours = props.date.getHours();
     if (hours < 10) {
@@ -37,8 +48,31 @@ export default function DateTime(props) {
   ];
   let month = months[props.date.getMonth()];
   let number = props.date.getDate();
+
+  function displayGreeting() {
+    let hours = props.date.getHours();
+    if (hours < 12) {
+      return "Good Morning";
+    }
+    if (hours >= 12 && hours <= 16) {
+       return "Good Afternoon";
+      }
+    if (hours >= 17) {
+        return "Good Evening";
+      }
+  }
   
 
+if(greeting === true){
+  return(
+    <div className="DateTime">
+      <h3>
+        {displayGreeting()}
+      </h3>
+    </div>
+  )
+
+}else{
   return (
     <div className="DateTime">
       <h3>
@@ -46,4 +80,6 @@ export default function DateTime(props) {
       </h3>
     </div>
   );
+}
+  
 }
