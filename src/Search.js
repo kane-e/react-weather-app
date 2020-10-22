@@ -4,8 +4,8 @@ import Conditions from "./Conditions";
 import DateTime from "./DateTime";
 import Forecast from "./Forecast";
 import axios from "axios";
-import Location from "./Location";
-import Random from "./Random";
+import LocationButton from "./LocationButton";
+import RandomButton from "./RandomButton";
 import ErrorMessage from "./ErrorMessage";
 
 
@@ -126,13 +126,13 @@ export default function Search(props) {
             className="location-button"
             onClick={getPosition} onMouseEnter = {showTooltip} onMouseLeave= {hideTooltip}
           >
-            { alert ? <Location /> : null }
+            { alert ? <LocationButton /> : null }
             <i className="fas fa-map-marker-alt"></i>
           </button>
          
           
           <button id="random-button" onClick={searchRandom} onMouseEnter={showMessage} onMouseLeave= {hideMessage} >
-            { message ? <Random /> : null}
+            { message ? <RandomButton /> : null}
             <i className="fas fa-globe"></i>
           </button>
           
