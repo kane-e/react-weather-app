@@ -11,7 +11,7 @@ export default function ErrorMessage() {
         <div className="ErrorMessage">
            Couldn't find that!
            Click on the monkey to search again.
-           <button onClick={refresh} id="reload"> 🙈</button>
+           <button onClick={refresh} id="reload"><span role="img" aria-label="error-emoji">🙈</span></button>
         </div>
     )
     
