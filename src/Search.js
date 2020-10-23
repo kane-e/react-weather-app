@@ -7,8 +7,8 @@ import axios from "axios";
 import LocationButton from "./LocationButton";
 import RandomButton from "./RandomButton";
 import ErrorMessage from "./ErrorMessage";
-
-
+import Loader from 'react-loader-spinner';
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 
 
 export default function Search(props) {
@@ -125,12 +125,12 @@ export default function Search(props) {
             id="location-button"
             className="location-button"
             onClick={getPosition} onMouseEnter = {showTooltip} onMouseLeave= {hideTooltip}
+           
           >
             { alert ? <LocationButton /> : null }
             <i className="fas fa-map-marker-alt"></i>
           </button>
-         
-          
+  
           <button id="random-button" onClick={searchRandom} onMouseEnter={showMessage} onMouseLeave= {hideMessage} >
             { message ? <RandomButton /> : null}
             <i className="fas fa-globe"></i>
@@ -163,6 +163,16 @@ export default function Search(props) {
     } 
   else {
     searchCity();
-    return "CODED BY EMMA";
+    return (
+    <div className="loader">
+    <Loader
+         type="Puff"
+         color= "black"
+         height={100}
+         width={100}
+ 
+      />
+      </div>
+    );
   }
 }

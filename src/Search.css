@@ -24,6 +24,10 @@
   transition: all 150ms ease-in-out;
 }
 
+.Serch .loader {
+  display: block;
+  margin: 0 auto;
+}
 .Search ::placeholder {
   color: white;
 }

@@ -82,7 +82,7 @@ export default function Forecast(props) {
     exclude=minutely&appid=${apiKey}&units=imperial`;
     axios.get(apiUrl).then(getForecast);
 
-    return "Loading";
+    return "";
   }
   }
 }
