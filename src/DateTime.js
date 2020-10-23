@@ -1,8 +1,10 @@
 import React, {useEffect, useState} from "react";
 import "./DateTime.css";
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 export default function DateTime(props) {
   const [greeting, setGreeting] = useState(true);
+  
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -10,10 +12,8 @@ export default function DateTime(props) {
     }, 3000);
     return () => clearTimeout(timer);
   }, []);
-
-
-
-  function formatHours() {
+  
+     function formatHours() {
     let hours = props.date.getHours();
     if (hours < 10) {
       hours = `0${hours}`;
@@ -49,6 +49,7 @@ export default function DateTime(props) {
   let month = months[props.date.getMonth()];
   let number = props.date.getDate();
 
+  
   function displayGreeting() {
     let hours = props.date.getHours();
     if (hours < 12) {
@@ -65,21 +66,34 @@ export default function DateTime(props) {
 
 if(greeting === true){
   return(
+    
     <div className="DateTime">
-      <h3>
+      <ReactCSSTransitionGroup
+        transitionName="example"
+        transitionAppear={true}
+        transitionAppearTimeout={300}
+        transitionEnter={false}
+        transitionLeaveTimeout={300}>
+      <h3 key="greeting">
         {displayGreeting()}
       </h3>
+      </ReactCSSTransitionGroup>
     </div>
   )
 
 }else{
-  return (
-    <div className="DateTime">
-      <h3>
+     return(
+        <div className="DateTime">
+      <ReactCSSTransitionGroup
+        transitionName="fade"
+        transitionEnterTimeout={300}
+        transitionLeave={false}>
+      <h3 key="date">
         {day} {month} {number}, {formatHours()}
       </h3>
+      </ReactCSSTransitionGroup>
     </div>
   );
 }
-  
+   
 }

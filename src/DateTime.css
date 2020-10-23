@@ -4,3 +4,29 @@
   font-size: 17px;
   color: #f3c623;
 }
+
+.example-appear {
+  opacity: 0.01;
+}
+
+.example-appear.example-appear-active {
+  opacity: 1;
+  transition: opacity 0.3s ease-in;
+}
+.example-leave {
+  opacity: 1;
+  transition: opacity 1s ease-in;
+}
+
+.example-leave.example-leave-active {
+  opacity: 0.01;
+  transition: opacity 300ms ease-in;
+}
+.fade-enter {
+  opacity: 0.01;
+}
+
+.fade-enter.fade-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
