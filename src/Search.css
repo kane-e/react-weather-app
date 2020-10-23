@@ -45,7 +45,9 @@
 .Search .tooltip .arrow::before {
   border-top-color: rgba(0, 0, 0, 0.8);
 }
-.Loader {
+svg {
+  display: block;
+  margin: 0 auto;
   position: relative;
-  left: 10px;
+  top: 200px;
 }

@@ -164,15 +164,14 @@ export default function Search(props) {
   else {
     searchCity();
     return (
-    <div className="loader">
-    <Loader
-         type="Puff"
-         color= "black"
+      <Loader
+         type="Watch"
+         color= "#810000"
          height={100}
          width={100}
+         className="Loader"
  
       />
-      </div>
-    );
+    )
   }
 }
