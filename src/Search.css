@@ -24,10 +24,6 @@
   transition: all 150ms ease-in-out;
 }
 
-.Serch .loader {
-  display: block;
-  margin: 0 auto;
-}
 .Search ::placeholder {
   color: white;
 }
@@ -48,4 +44,8 @@
 }
 .Search .tooltip .arrow::before {
   border-top-color: rgba(0, 0, 0, 0.8);
+}
+.Loader {
+  position: relative;
+  left: 10px;
 }

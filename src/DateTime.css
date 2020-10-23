@@ -5,22 +5,22 @@
   color: #f3c623;
 }
 
-.example-appear {
+.greeting-appear {
   opacity: 0.01;
 }
 
-.example-appear.example-appear-active {
+.greeting-appear.greeting-appear-active {
   opacity: 1;
-  transition: opacity 0.3s ease-in;
+  transition: opacity 0.5s ease-in;
 }
-.example-leave {
+.greeting-leave {
   opacity: 1;
   transition: opacity 1s ease-in;
 }
 
-.example-leave.example-leave-active {
+.greeting-leave.greeting-leave-active {
   opacity: 0.01;
-  transition: opacity 300ms ease-in;
+  transition: opacity 0.5s ease-in;
 }
 .fade-enter {
   opacity: 0.01;

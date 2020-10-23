@@ -69,9 +69,9 @@ if(greeting === true){
     
     <div className="DateTime">
       <ReactCSSTransitionGroup
-        transitionName="example"
+        transitionName="greeting"
         transitionAppear={true}
-        transitionAppearTimeout={300}
+        transitionAppearTimeout={500}
         transitionEnter={false}
         transitionLeaveTimeout={300}>
       <h3 key="greeting">
@@ -86,7 +86,7 @@ if(greeting === true){
         <div className="DateTime">
       <ReactCSSTransitionGroup
         transitionName="fade"
-        transitionEnterTimeout={300}
+        transitionEnterTimeout={500}
         transitionLeave={false}>
       <h3 key="date">
         {day} {month} {number}, {formatHours()}
