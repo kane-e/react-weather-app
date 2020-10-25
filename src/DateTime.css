@@ -15,12 +15,11 @@
 }
 .greeting-leave {
   opacity: 1;
-  transition: opacity 1s ease-in;
 }
 
 .greeting-leave.greeting-leave-active {
   opacity: 0.01;
-  transition: opacity 0.5s ease-in;
+  transition: opacity 0.3s ease-in;
 }
 .fade-enter {
   opacity: 0.01;
