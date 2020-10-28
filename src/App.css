@@ -10,18 +10,16 @@ body {
 .background-image {
   width: 100%;
   height: 100%;
-  background-size: contain;
 }
 .app-wrapper {
   max-width: 500px;
   margin: 15px auto;
 }
 .weather-app {
-  border: 2px solid gray;
+  border: 2px solid transparent;
   border-radius: 10px;
   height: 580px;
   display: block;
-  background-image: linear-gradient(-225deg, #407088 0%, #5d54a4 90%);
 }
 
 hr {
