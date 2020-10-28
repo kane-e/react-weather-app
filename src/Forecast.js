@@ -26,6 +26,13 @@ export default function Forecast(props) {
     event.preventDefault();
     return props.setPreview("daily");
   }
+  
+  function setColor(){
+    if(props.color==="#d92027"){
+      return "#5fdde5";
+    }
+  }
+
 
   if (loaded && forecast.lat === props.data.lat && forecast.lon === props.data.lon && props.preview === "daily" ) {
     return (
@@ -35,17 +42,17 @@ export default function Forecast(props) {
           Daily
         </a>{" "}
         |
-        <a href="/" id="hourly-link" className="not-active" onClick={getHourly}>
+        <a href="/" id="hourly-link" className="not-active" onClick={getHourly} style={{color: setColor()}}>
           {" "}
           Hourly
         </a>
       </span>
       <div className=" row">
-        <DailyForecast data={forecast.daily[1]} unit={props.unit} />
-        <DailyForecast data={forecast.daily[2]} unit={props.unit} />
-        <DailyForecast data={forecast.daily[3]} unit={props.unit} />
-        <DailyForecast data={forecast.daily[4]} unit={props.unit} />
-        <DailyForecast data={forecast.daily[5]} unit={props.unit} />
+        <DailyForecast data={forecast.daily[1]} unit={props.unit} color={props.color} />
+        <DailyForecast data={forecast.daily[2]} unit={props.unit} color={props.color} />
+        <DailyForecast data={forecast.daily[3]} unit={props.unit} color={props.color}/>
+        <DailyForecast data={forecast.daily[4]} unit={props.unit} color={props.color}/>
+        <DailyForecast data={forecast.daily[5]} unit={props.unit} color={props.color}/>
         
       </div>
       </div>
@@ -55,7 +62,7 @@ export default function Forecast(props) {
     return (
       <div className= "Forecast">
       <span className="forecast-links">
-        <a href="/" id="daily-link" className="not-active" onClick={getDaily}>
+        <a href="/" id="daily-link" className="not-active" style={{color: setColor()}} onClick={getDaily}>
           Daily
         </a>{" "}
         |

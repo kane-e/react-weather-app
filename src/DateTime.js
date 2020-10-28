@@ -62,6 +62,12 @@ export default function DateTime(props) {
         return "Good Evening";
       }
   }
+
+  function setColor(){
+    if(props.color==="#d92027"){
+      return "#5fdde5";
+    }
+  }
   
 
 if(greeting === true){
@@ -74,7 +80,7 @@ if(greeting === true){
         transitionAppearTimeout={500}
         transitionEnter={false}
         transitionLeaveTimeout={300}>
-      <h3 key="greeting">
+      <h3 key="greeting" style={{color: setColor()}}>
         {displayGreeting()}
       </h3>
       </ReactCSSTransitionGroup>
@@ -88,7 +94,7 @@ if(greeting === true){
         transitionName="fade"
         transitionEnterTimeout={500}
         transitionLeave={false}>
-      <h3 key="date">
+      <h3 key="date" style={{color: setColor()}}>
         {day} {month} {number}, {formatHours()}
       </h3>
       </ReactCSSTransitionGroup>

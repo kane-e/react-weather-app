@@ -104,13 +104,18 @@ export default function Search(props) {
   function hideMessage(event){
     setMessage(false);
   }
+  function setColor(){
+    if(props.color==="#d92027"){
+      return "#5fdde5";
+    }
+  }
   
 
   if (weather.ready && error === false) {
     return (
       <div className="Search">
-        <DateTime date={weather.date} />
-        <hr />
+        <DateTime date={weather.date} color={props.color}/>
+        <hr style={{borderColor: setColor()}}/>
         <form className="search-form" onSubmit={handleSubmit}>
           <input
             type="text"
@@ -121,7 +126,8 @@ export default function Search(props) {
             id="search-input"
             onChange={updateCity}
           />
-          <input type="submit" value="Search" id="submit" />
+
+          <input type="submit" style={{backgroundColor: setColor()}} value="Search" id="submit" />
           
           <button
             id="location-button"
@@ -145,6 +151,7 @@ export default function Search(props) {
           setUnit={setUnit}
           dailyHigh={dailyHigh}
           dailyLow={dailyLow}
+          color={props.color}
         />
         <Forecast
           data={weather}
@@ -155,6 +162,7 @@ export default function Search(props) {
           setDailyLow={setDailyLow}
           preview = {preview}
           setPreview= {setPreview}
+          color={props.color}
         />
         
       </div>

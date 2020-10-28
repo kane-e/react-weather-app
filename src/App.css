@@ -22,11 +22,6 @@ body {
   display: block;
 }
 
-hr {
-  border: 1px dotted rgba(243, 198, 35, 0.6);
-  width: 100%;
-  margin: 0;
-}
 .App .theme-button {
   position: absolute;
   top: 20px;

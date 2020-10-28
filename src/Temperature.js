@@ -13,6 +13,11 @@ export default function Temperature(props) {
   function celsiusTemperature(event) {
     return props.fahrenheit - (32 * 5) / 9;
   }
+  function setColor(){
+    if(props.color==="#d92027"){
+      return "#5fdde5";
+    }
+  }
   if (props.unit === "fahrenheit") {
     return (
       <div className="Temperature">
@@ -26,6 +31,7 @@ export default function Temperature(props) {
                 id="celsius-link"
                 className="not-active"
                 onClick={getCelsius}
+                style={{color: setColor()}}
               >
                 °C
               </a>
@@ -46,6 +52,7 @@ export default function Temperature(props) {
                 id="fahrenheit-link"
                 className="not-active"
                 onClick={getFahrenheit}
+                style={{color: setColor()}}
               >
                 °F{" "}
               </a>

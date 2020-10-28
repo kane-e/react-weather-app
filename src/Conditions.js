@@ -7,17 +7,23 @@ import MaxMin from "./MaxMin";
 
 
 export default function Conditions(props) {
+  function setColor(){
+    if(props.color==="#d92027"){
+      return "#5fdde5";
+    }
+  }
   return (
     <div className="Conditions">
-      <h1 id="city">
+      <h1 id="city" style={{color: setColor()}} >
         {props.data.city}, {props.data.country}
       </h1>
       <Temperature
         fahrenheit={props.data.temperature}
         unit={props.unit}
         setUnit={props.setUnit}
+        color={props.color}
       />
-      <h4 className="text-center current-condition mb-2">
+      <h4 className="text-center current-condition mb-2" style={{color: setColor()}}>
         {props.data.description}
       </h4>
       <div className="row">

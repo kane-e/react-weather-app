@@ -23,11 +23,16 @@ export default function Icon(props) {
     "50n": "FOG",
   };
 
+  function setColor(){
+    if(props.color==="#d92027"){
+      return "#5fdde5";
+    }
+  }
   return (
     <div className="Icon" id="CurrentIcon">
       <ReactAnimatedWeather
         icon={mapIcons[props.data]}
-        color="#ffcbcb"
+        color= "#ffcbcb"
         size={64}
         animate={true}
       />

@@ -26,7 +26,7 @@
   cursor: default;
 }
 .Forecast .forecast-links .not-active {
-  color: goldenrod;
+  color: #f3c623;
 }
 .Forecast .forecast-links .active:hover {
   text-decoration: none;
