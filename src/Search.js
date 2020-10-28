@@ -71,6 +71,7 @@ export default function Search(props) {
     axios.get(apiUrl).then(showWeather);
   }
   function searchRandom(event) {
+    event.preventDefault();
     let cities = [
       "London",
       "New York",
@@ -103,6 +104,7 @@ export default function Search(props) {
   function hideMessage(event){
     setMessage(false);
   }
+  
 
   if (weather.ready && error === false) {
     return (
@@ -135,7 +137,7 @@ export default function Search(props) {
             { message ? <RandomButton /> : null}
             <i className="fas fa-globe"></i>
           </button>
-          
+           
         </form>
         <Conditions
           data={weather}
