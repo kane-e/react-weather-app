@@ -105,8 +105,14 @@ export default function Search(props) {
     setMessage(false);
   }
   function setColor(){
-    if(props.color==="#d92027"){
-      return "#5fdde5";
+    if(props.color==="#810000"){
+      return "#0e918c";
+    }if (props.color==="purple"){
+      return "#b80d57"
+    } if (props.color ==="#40bfc1"){
+      return "#85ef47"
+    }if (props.color ==="white"){
+      return "#90007f"
     }
   }
   
