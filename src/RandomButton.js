@@ -3,8 +3,7 @@ import "./RandomButton.css";
 
 export default function RandomButton (){
     return (
-        <div className="RandomButton
-        ">
+        <div className="RandomButton">
             Random City
         </div>
     )

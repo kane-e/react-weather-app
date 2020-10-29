@@ -4,11 +4,12 @@ import Conditions from "./Conditions";
 import DateTime from "./DateTime";
 import Forecast from "./Forecast";
 import axios from "axios";
-import LocationButton from "./LocationButton";
-import RandomButton from "./RandomButton";
 import ErrorMessage from "./ErrorMessage";
 import Loader from 'react-loader-spinner';
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
+import LocationButton from "./LocationButton";
+import RandomButton from "./RandomButton";
+
 
 
 export default function Search(props) {
@@ -18,12 +19,11 @@ export default function Search(props) {
   const [preview, setPreview] = useState("daily");
   const [dailyHigh, setDailyHigh] = useState(null);
   const [dailyLow, setDailyLow] = useState(null);
+  const [error, setError] = useState(false);
   const [alert, setAlert] = useState(false);
   const [message, setMessage] = useState(false);
-  const [error, setError] = useState(false);
 
   function showWeather(response) {
-    console.log(response.data);
     setWeather({
       ready: true,
       city: response.data.name,
@@ -92,6 +92,8 @@ export default function Search(props) {
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
     axios.get(apiUrl).then(showWeather);
   }
+
+  //custom tooltips
   function showTooltip(event){
     setAlert(true);
   }
@@ -104,6 +106,8 @@ export default function Search(props) {
   function hideMessage(event){
     setMessage(false);
   }
+
+  //set secondary text color
   function setColor(){
     if(props.color==="#810000"){
       return "#0e918c";

@@ -9,24 +9,24 @@ export default function Forecast(props) {
   const [loaded, setLoaded] = useState(false);
   const [forecast, setForecast] = useState(null);
   
-
+  // retrieve daily forecast and set current day high and low temperature to send back to conditions.js
   function getForecast(response) {
     setForecast(response.data);
-    console.log(response.data);
-    
     props.setDailyHigh(response.data.daily[0].temp.max);
     props.setDailyLow(response.data.daily[0].temp.min);
     setLoaded(true);
   }
+  // make hourly forecast visible
   function getHourly(event){
     event.preventDefault();
     return props.setPreview("hourly")
   }
+  // make daily forecast visible
   function getDaily(event){
     event.preventDefault();
     return props.setPreview("daily");
   }
-  
+  // set secondary text color
   function setColor(){
     if(props.color==="#810000"){
       return "#0e918c";

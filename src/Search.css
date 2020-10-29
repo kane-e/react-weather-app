@@ -38,13 +38,7 @@
   border: none;
   font-size: 22px;
 }
-.Search .tooltip-inner {
-  background-color: rgba(0, 0, 0, 0.8);
-  font-size: 10px;
-}
-.Search .tooltip .arrow::before {
-  border-top-color: rgba(0, 0, 0, 0.8);
-}
+
 svg {
   display: block;
   margin: 0 auto;

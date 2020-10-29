@@ -7,6 +7,8 @@ import MaxMin from "./MaxMin";
 
 
 export default function Conditions(props) {
+  
+  //set secondary text color
   function setColor(){
     if(props.color==="#810000"){
       return "#0e918c";
@@ -18,6 +20,7 @@ export default function Conditions(props) {
       return "#90007f"
     }
   }
+  
   return (
     <div className="Conditions">
       <h1 id="city" style={{color: setColor()}} >

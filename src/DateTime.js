@@ -5,7 +5,7 @@ import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 export default function DateTime(props) {
   const [greeting, setGreeting] = useState(true);
   
-
+ // change greeting to date/time
   useEffect(() => {
     const timer = setTimeout(() => {
       setGreeting(false);
@@ -62,7 +62,7 @@ export default function DateTime(props) {
         return "Good Evening";
       }
   }
-
+  // set secondary text color
   function setColor(){
     if(props.color==="#810000"){
       return "#0e918c";

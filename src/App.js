@@ -3,8 +3,6 @@ import "bootstrap/dist/css/bootstrap.css";
 import "./App.css";
 import Search from "./Search";
 import Footer from "./Footer";
-import { withTheme } from "@material-ui/core";
-import { red } from "@material-ui/core/colors";
 
 
 export default function App() {
@@ -12,6 +10,7 @@ export default function App() {
   const [textColor, setTextColor] = useState("");
   const [key, setKey] = useState(0);
 
+  //color combinations
   const colorArray = [
     {
       background: "linear-gradient(-225deg, #407088 0%, #5d54a4 90%)",
@@ -52,7 +51,7 @@ export default function App() {
     <div className="App background-image" >
       
       <div className="app-wrapper">
-       <button type="button" className="btn btn-dark theme-button" onClick={changeBackground}>Theme</button>
+       <button type="button" className="btn btn-dark theme-button" onClick={changeBackground}><i class="fas fa-paint-brush"></i></button>
         <div className="weather-app" style={{backgroundImage: backgroundColor, color: textColor}}>
           <Search defaultCity="Tokyo" color={textColor} />
         </div>
@@ -62,4 +61,3 @@ export default function App() {
   );
 }
 
-// background image
