@@ -42,7 +42,6 @@ export default function App() {
     } else {
       index = key + 1;
     }
-    console.log("index", index);
     setBackgroundColor(colorArray[index].background);
     setTextColor(colorArray[index].text);
     setKey(index);
@@ -51,7 +50,7 @@ export default function App() {
     <div className="App background-image" >
       
       <div className="app-wrapper">
-       <button type="button" className="btn btn-dark theme-button" onClick={changeBackground}><i class="fas fa-paint-brush"></i></button>
+       <button type="button" className="btn btn-dark theme-button" onClick={changeBackground}><i className="fas fa-paint-brush"></i></button>
         <div className="weather-app" style={{backgroundImage: backgroundColor, color: textColor}}>
           <Search defaultCity="Tokyo" color={textColor} />
         </div>

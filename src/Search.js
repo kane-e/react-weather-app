@@ -60,6 +60,7 @@ export default function Search(props) {
     axios.get(apiUrl).then(showWeather);
   }
   function getPosition(event) {
+    event.preventDefault();
     navigator.geolocation.getCurrentPosition(searchPosition);
   }
   function searchPosition(position) {
@@ -143,7 +144,6 @@ export default function Search(props) {
             id="location-button"
             className="location-button"
             onClick={getPosition} onMouseEnter = {showTooltip} onMouseLeave= {hideTooltip}
-           
           >
             { alert ? <LocationButton /> : null }
             <i className="fas fa-map-marker-alt"></i>
