@@ -30,8 +30,8 @@ export default function App() {
       text: "white",
     },
     {
-      background: "linear-gradient(red,orange,yellow,green,blue,indigo,violet)",
-      text: "#40bfc1",
+      background: "linear-gradient(to top, red,orange,yellow,green,blue,indigo,violet)",
+      text: "#2a014b",
     }
   ];
 

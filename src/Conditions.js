@@ -12,8 +12,8 @@ export default function Conditions(props) {
       return "#0e918c";
     } if (props.color==="purple"){
       return "#b80d57"
-    } if (props.color ==="#40bfc1"){
-      return "#85ef47"
+    } if (props.color ==="#2a014b"){
+      return "#4ef037"
     }if (props.color ==="white"){
       return "#90007f"
     }
