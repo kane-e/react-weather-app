@@ -54,8 +54,8 @@ export default function App() {
         <div className="weather-app" style={{backgroundImage: backgroundColor, color: textColor}}>
           <Search defaultCity="Tokyo" color={textColor} />
         </div>
-        <Footer />
       </div>
+       <Footer />
     </div>
   );
 }
