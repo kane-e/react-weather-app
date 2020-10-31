@@ -22,6 +22,8 @@ export default function Search(props) {
   const [error, setError] = useState(false);
   const [alert, setAlert] = useState(false);
   const [message, setMessage] = useState(false);
+  
+  
 
   function showWeather(response) {
     setWeather({
@@ -41,24 +43,21 @@ export default function Search(props) {
 
   function handleSubmit(event) {
     event.preventDefault();
-    try{
-      if(error.response.status === 404){
-        throw new Error("Search Again");
-      }
-      searchCity();
-    }catch{
-      setError(true);
-    }
-    
+    searchCity();
   }
+
   function updateCity(event) {
     setCity(event.target.value);
   }
   function searchCity() {
     let apiKey = "35e83019a6881c6f862e82a156e4c5fc";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
-    axios.get(apiUrl).then(showWeather);
+    axios.get(apiUrl).then(showWeather).catch(err => { 
+      setError(true)
+    }
+    )
   }
+  
   function getPosition(event) {
     event.preventDefault();
     navigator.geolocation.getCurrentPosition(searchPosition);
@@ -178,7 +177,7 @@ export default function Search(props) {
       </div>
     );
   }  
-  if (weather.ready && error === true){
+  if (error === true){
       return <ErrorMessage />
     } 
   else {
@@ -194,4 +193,4 @@ export default function Search(props) {
       />
     )
   }
-}
+  }
