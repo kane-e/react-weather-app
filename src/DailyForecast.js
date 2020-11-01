@@ -37,7 +37,7 @@ export default function DailyForecast(props) {
         <div>{forecastDay()}</div>
         <div>
           <span className="forecast-high">
-            {Math.round(((props.data.temp.max - 32) * 5) / 9)}
+            {Math.round(((props.data.temp.max - 32) * (5 / 9)))}
           </span>
           °
         </div>
@@ -47,7 +47,7 @@ export default function DailyForecast(props) {
 
         <div>
           <span className="forecast-low">
-            {Math.round(((props.data.temp.min - 32) * 5) / 9)}
+            {Math.round(((props.data.temp.min - 32) * (5 / 9)))}
           </span>
           °
         </div>

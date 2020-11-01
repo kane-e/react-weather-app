@@ -44,7 +44,7 @@ export default function HourlyForecast(props){
         <div>{formatHours()}</div>
         <div>
           <span className="forecast-high">
-            {Math.round(((props.data.temp - 32) * 5) / 9)}
+            {Math.round(((props.data.temp - 32) * (5 / 9)))}
           </span>
           °
         </div>

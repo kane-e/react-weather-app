@@ -11,7 +11,7 @@ export default function Temperature(props) {
     props.setUnit("celsius");
   }
   function celsiusTemperature(event) {
-    return props.fahrenheit - (32 * 5) / 9;
+    return (props.fahrenheit - 32) * (5 / 9);
   }
   function setColor(){
     if(props.color==="#810000"){
