@@ -47,7 +47,7 @@ export default function App() {
     setKey(index);
   }
   return (
-    <div className="App background-image" >
+    <div className="App" >
       
       <div className="app-wrapper">
        <button type="button" className="btn btn-dark theme-button" onClick={changeBackground}><i className="fas fa-paint-brush"></i></button>
